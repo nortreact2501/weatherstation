@@ -1,10 +1,10 @@
 function LeftPane({locations, selected, setSelected}) {
     return (
         locations.map((loc, index) => {
-            const marker = index === selected ? '=>' : ''
+            const elemClass = index === selected ? 'selected_city' : ''
             return (
-                <div key={index}>
-                    <span onClick={() => {setSelected(index)}} >{marker} {loc.name}</span>
+                <div key={index} className={elemClass}>
+                    <span onClick={() => {setSelected(index)}} >{loc.name}</span>
                 </div>
             )
         })
